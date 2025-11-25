@@ -44,94 +44,29 @@
   </div>
 </section>
 
-<!-- ---------- Menu Card Section ---------- -->
+<!-- ---------- Menu Sections (Breakfast, Lunch, Drinks) ---------- -->
 <section class="menu-section" id="breakfast">
   <div class="container">
 
-    <!-- Menu card holds the Breakfast items -->
+    <!-- Breakfast Section -->
     <div class="menu-card">
       <h2>Breakfast</h2>
-
-      <!------------ First breakfast item ------------>
-      <article class="menu-item">
-        <div class="menu-thumb">
-          <img src="../static/images/eggs.jpg" alt="Poached Eggs on Toast">
-        </div>
-
-        <div class="menu-info">
-          <h3>Poached Eggs on Toast</h3>
-          <p class="desc">Two free-range eggs, Toasted Sourdough, Herbed Butter.</p>
-
-          <!-- Price and Add button on the same line -->
-          <div class="menu-actions">
-            <span class="price">$10.00</span>
-            <button class="add-btn" disabled>Add</button>
-          </div>
-        </div>
-      </article>
-
-      <!------------ Second breakfast item ------------>
-      <article class="menu-item">
-        <div class="menu-thumb">
-          <img src="../static/images/ham-and-cheese-croissant.webp" alt="Grilled Ham & Cheese Croissant">
-        </div>
-
-        <div class="menu-info">
-          <h3>Grilled Ham & Cheese Croissant</h3>
-          <p class="desc">Organic ham, Toasted Croissant, Melted cheese.</p>
-
-          <!-- Price and Add button on the same line -->
-          <div class="menu-actions">
-            <span class="price">$13.50</span>
-            <button class="add-btn" disabled>Add</button>
-          </div>
-        </div>
-      </article>
-
+      <div id="menu-breakfast" class="menu-items"></div>
     </div>
 
-    <!-- Menu card holds the Lunch items -->
+    <!-- Lunch Section -->
     <div class="menu-card">
       <h2>Lunch</h2>
-
-      <!------------ First lunch item ------------>
-      <article class="menu-item">
-        <div class="menu-thumb">
-          <img src="../static/images/beef-burger.jpg" alt="Beef Burger">
-        </div>
-
-        <div class="menu-info">
-          <h3>Beef Burger</h3>
-          <p class="desc">Grass-fed Beef Patty, Lettuce, Tomato, Onion, Brioche Buns, Cheese, Sauces.</p>
-
-          <!-- Price and Add button on the same line -->
-          <div class="menu-actions">
-            <span class="price">$17.00</span>
-            <button class="add-btn" disabled>Add</button>
-          </div>
-        </div>
-      </article>
-
-      <!------------ Second lunch item ------------>
-      <article class="menu-item">
-        <div class="menu-thumb">
-          <img src="../static/images/potato-wedges.jpeg" alt="Potato Wedges">
-        </div>
-
-        <div class="menu-info">
-          <h3>Potato Wedges</h3>
-          <p class="desc">Locally-Sourced Potato, Salt, Garnish Mix.</p>
-
-          <!-- Price and Add button on the same line -->
-          <div class="menu-actions">
-            <span class="price">$9.50</span>
-            <button class="add-btn" disabled>Add</button>
-          </div>
-        </div>
-      </article>
-
+      <div id="menu-lunch" class="menu-items"></div>
     </div>
-  </div>
+
+    <!-- Drinks Section -->
+    <div class="menu-card">
+      <h2>Drinks</h2>
+      <div id="menu-drinks" class="menu-items"></div>
+    </div>
+
+  </div> <!-- end of .container -->
 </section>
 
 <!-- ---------- Footer Section ---------- -->
@@ -140,6 +75,8 @@
     © 2025 Café Finigan • <a href="#">Privacy</a>
   </div>
 </footer>
+
+<script src="../static/menu.js"></script>
 
 </body>
 </html>
