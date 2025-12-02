@@ -72,7 +72,7 @@ form.addEventListener("submit", event => {
       clearCart();
 
       // Redirect to Thank-You page
-      window.location.href = "thanks.html";
+      window.location.href = "/templates/thanks.html";
     })
     .catch(() => {
       messageP.textContent = "Could not place order. Is Flask running?";
