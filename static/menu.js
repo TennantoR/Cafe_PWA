@@ -73,14 +73,14 @@ fetch("http://127.0.0.1:5050/menu")
       card.className = "menu-item";
       card.innerHTML = `
         <div class="menu-thumb">
-          <img src="../static/images/eggs.jpg" alt="${item.ItemName}">
+          <img src="../static/images/${((item.ItemName).replaceAll(' ', '_')).toLowerCase()}.jpg" alt="${item.ItemName}">
         </div>
         <div class="menu-info">
           <h3>${item.ItemName}</h3>
           <p class="desc">Tasty Café Finigan favourite.</p>
           <div class="menu-actions">
             <span class="price">$${Number(item.Price).toFixed(2)}</span>
-            <button class="add-btn">Add</button>
+            <button class="add-btn" disabled>Add</button>
           </div>
         </div>
       `;

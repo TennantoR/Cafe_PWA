@@ -15,7 +15,10 @@ const STATIC_ASSETS = [
   "/static/images/logo.png",
   "/static/images/hero.jpg",
   "/static/images/menu-banner.jpg",
-  "/static/images/eggs.jpg"
+  "/static/images/poached_eggs_on_toast.jpg",
+  "/static/images/beef_burger.jpg",
+  "/static/images/ham_and_cheese_croissant.jpg",
+  "/static/images/potato_wedges.jpg"
 ];
 
 // Install event: pre-cache all static assets
