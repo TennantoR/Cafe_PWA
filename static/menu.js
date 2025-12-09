@@ -48,14 +48,7 @@ console.log("Containers:", {
   drinks: drinksContainer
 });
 
-// Load menu items from Flask
-fetch("http://127.0.0.1:5050/menu")
-  .then(res => res.json())
-  .then(data => {
-    console.log("Menu data from Flask:", data);
-
-    const items = data.menu;  // matches return jsonify({"menu": menu})
-
+function renderMenuItems(items) {  
     items.forEach(item => {
       let target;
 
@@ -80,7 +73,7 @@ fetch("http://127.0.0.1:5050/menu")
           <p class="desc">Tasty Café Finigan favourite.</p>
           <div class="menu-actions">
             <span class="price">$${Number(item.Price).toFixed(2)}</span>
-            <button class="add-btn" disabled>Add</button>
+            <button class="add-btn">Add</button>
           </div>
         </div>
       `;
@@ -104,10 +97,33 @@ fetch("http://127.0.0.1:5050/menu")
         target.appendChild(card);
       }
     });
+  }
+
+
+// Load menu items from Flask
+fetch("http://127.0.0.1:5050/menu")
+  .then(res => res.json())
+  .then(data => {
+    console.log("Menu data from Flask:", data);
+
+    const items = data.menu;  // matches return jsonify({"menu": menu})
+
+    renderMenuItems(items);
   })
+
+
   .catch(err => {
-    console.error("Error loading menu:", err);
-    if (breakfastContainer) {
-      breakfastContainer.innerHTML = "<p>Unable to load menu items.</p>";
-    }
+  console.warn("API failed — loading offline menu instead:", err);
+
+  fetch("../static/menu-offline.json")
+    .then(res => res.json())
+    .then(data => {
+      // Reuse the same rendering code used for the online menu
+      const items = data.menu || data;
+      renderMenuItems(items);
+    })
+    .catch(() => {
+      breakfastContainer.innerHTML =
+        "<p>Unable to load menu items offline.</p>";
+    });
   });

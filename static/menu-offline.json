@@ -1,0 +1,64 @@
+{
+  "menu": [
+    {
+      "Category": "Drink",
+      "ItemName": "Flat White",
+      "MenuItemID": 1,
+      "Price": 4.5
+    },
+    {
+      "Category": "Drink",
+      "ItemName": "Orange Juice",
+      "MenuItemID": 2,
+      "Price": 4.8
+    },
+    {
+      "Category": "Drink",
+      "ItemName": "Iced Latte",
+      "MenuItemID": 3,
+      "Price": 5.0
+    },
+    {
+      "Category": "Drink",
+      "ItemName": "Mocha",
+      "MenuItemID": 4,
+      "Price": 5.5
+    },
+    {
+      "Category": "Breakfast",
+      "ItemName": "Chocolate Muffin",
+      "MenuItemID": 5,
+      "Price": 4.5
+    },
+    {
+      "Category": "Breakfast",
+      "ItemName": "Ham and Cheese Croissant",
+      "MenuItemID": 6,
+      "Price": 5.5
+    },
+    {
+      "Category": "Breakfast",
+      "ItemName": "Banana Bread",
+      "MenuItemID": 7,
+      "Price": 4.2
+    },
+    {
+      "Category": "Lunch",
+      "ItemName": "Potato Wedges",
+      "MenuItemID": 8,
+      "Price": 4.0
+    },
+    {
+      "Category": "Lunch",
+      "ItemName": "Beef Burger",
+      "MenuItemID": 9,
+      "Price": 12.5
+    },
+    {
+      "Category": "Lunch",
+      "ItemName": "Poached Eggs on Toast",
+      "MenuItemID": 10,
+      "Price": 8.5
+    }
+  ]
+}
