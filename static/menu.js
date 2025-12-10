@@ -70,7 +70,7 @@ function renderMenuItems(items) {
         </div>
         <div class="menu-info">
           <h3>${item.ItemName}</h3>
-          <p class="desc">Tasty Café Finigan favourite.</p>
+          <p class="desc">${item.Desc}</p>
           <div class="menu-actions">
             <span class="price">$${Number(item.Price).toFixed(2)}</span>
             <button class="add-btn">Add</button>
@@ -83,6 +83,11 @@ function renderMenuItems(items) {
 
       // When clicked, add this item to the cart in localStorage
       addButton.addEventListener("click", () => {
+      addButton.setAttribute("style","background:rgba(84, 45, 15, 1)");
+      setTimeout(() => {
+        addButton.setAttribute("style","background:rgb(141, 68, 17)");
+      }, 300); // 300 milliseconds = 0.3 seconds
+      
       addToCart({
           MenuItemID: item.MenuItemID,
           ItemName: item.ItemName,

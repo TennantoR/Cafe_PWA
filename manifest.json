@@ -4,7 +4,7 @@
   "start_url": "/templates/index.html",
   "display": "standalone",
   "background_color": "#faf7f2",
-  "theme_color": "#0e7c7b",
+  "theme_color": "#c18b73",
   "icons": [
     {
       "src": "/static/images/icons/logo-192.webp",

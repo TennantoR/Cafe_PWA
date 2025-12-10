@@ -21,6 +21,14 @@ body {
   line-height: 1.6;
 }
 
+.order-body {
+ background-color:#622708ba;
+}
+
+.menu-body {
+ background-color:#622708ba;
+}
+
 img { max-width: 100%; display: block; }
 a { color: var(--brand); text-decoration: none; transition: color 0.2s ease; }
 a:hover { text-decoration: underline; }
@@ -191,12 +199,13 @@ ul { margin: 0; padding: 0; }
 
 /* ---------- Footer Section ---------- */
 .site-footer {
-  border-top: 1px solid #ccc7be;  /* slightly darker neutral border */
-  color: #666;
+  border-top: 1px solid #594523d9;  /* slightly darker neutral border */
+  background:#ffffff;
   text-align: center;
   font-size: 0.9rem;
   padding: 1rem 0;
   margin-top: 1rem;
+  height: 100%;
 }
 
 .site-footer a {
@@ -237,6 +246,7 @@ ul { margin: 0; padding: 0; }
    ===================================================== */
 
 /* ---------- Menu Banner ---------- */
+
 .menu-banner img {
   width: 100%;
   height: clamp(180px, 22vw, 360px); /* thin on phones, not too deep on desktops */
@@ -364,7 +374,7 @@ ul { margin: 0; padding: 0; }
     cursor: pointer;
     opacity: 0.95;
     box-shadow: 0 4px 2px rgb(0 0 0 / 70%);
-    transition: opacity 0.2s ease;
+    transition: opacity 0.3s ease;
 }
 
 .add-btn:hover {
@@ -378,6 +388,26 @@ ul { margin: 0; padding: 0; }
 
 #order-button-id{
   visibility: hidden;
+  background: rgb(141, 68, 17);
+  transition: opacity 0.3s ease;
+}
+
+.remove-btn {
+    border: 1px solid #4c4038;
+    background: rgb(141, 68, 17);
+    color: #fff;
+    padding: 0.65rem 0.95rem;
+    border-radius: 10px;
+    font-weight: 650;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0.95;
+    box-shadow: 0 3px 1px rgb(0 0 0 / 50%);
+    transition: opacity 0.3s ease;
+}
+
+.remove-btn:hover {
+  opacity: 1;
 }
 
 /* ---------- Responsive Layout ---------- */
@@ -484,4 +514,14 @@ ul { margin: 0; padding: 0; }
 .order-button {
   padding: 0.75rem 1.5rem;
   font-size: 1.1rem;
+}
+
+/* Item removal animation */
+.fade-out {
+  animation: fadeOut 0.4s forwards ease-out;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; height: 0; padding: 0; margin: 0; }
 }
