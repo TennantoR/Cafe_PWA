@@ -8,7 +8,7 @@
     <meta name="description" content="Browse the Café Finigan breakfast, lunch, and drinks menu. Add items to your pre-order and collect them at your chosen time.">
     <meta name="keywords" content="Café Finigan menu, breakfast, lunch, drinks, pre-order">
     <meta name="author" content="Tennant Robbie">
-    <link rel="icon" href="../static/images/logo.png" type="image/png">
+    <link rel="icon" href="../static/images/logo.webp" type="image/webp">
     <link rel="manifest" href="../manifest.json">
 </head>
 
@@ -19,7 +19,7 @@
 
     <!-- ---------- Brand Section (Logo + Name) ---------- -->
     <div class="brand">
-      <img src="../static/images/logo.png" alt="Café Finigan logo" class="logo">
+      <img src="../static/images/logo.webp" alt="Café Finigan logo" class="logo">
       <span class="brand-name">Café Finigan</span>
     </div>
 
@@ -38,7 +38,7 @@
 
 <!-- ---------- Menu Banner ---------- -->
 <section class="menu-banner">
-  <img src="../static/images/menu-banner.jpg" alt="Café Finigan Menu artwork">
+  <img src="../static/images/menu-banner.webp" alt="Café Finigan Menu artwork" fetchpriority="high">
 
   <div class="banner-text container">
     <h1>Your Order</h1>
@@ -52,7 +52,7 @@
     <div class="menu-card">
 
       <!-- Heading + form fields -->
-      <h3 class="order-details-heading">Enter your details:</h3>
+      <h2 class="order-details-heading">Enter your details:</h2>
 
       <form id="order-form" class="order-form">
 
@@ -95,7 +95,7 @@
 
       <!-- Button centred under Total -->
       <div class="order-button-row">
-        <button type="submit" form="order-form" class="add-btn order-button">
+        <button id="order-button-id" type="submit" form="order-form" class="add-btn order-button">
           Place order
         </button>
       </div>

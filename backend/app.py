@@ -28,7 +28,7 @@ def feedback():
         return jsonify({"error": "No message provided."}), 400
     print(f"[SERVER] Feedback received: {message}")
     # (Objects/data structures): 'message' is data app works with
-    return jsonify({"response": f"Thanks! You said: {message}"}), 201
+    return jsonify({"response": f"Thanks for your feedback! You said: {message}"}), 201
 
 # Test route to read customers from the database
 @app.route('/customers')

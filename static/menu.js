@@ -66,7 +66,7 @@ function renderMenuItems(items) {
       card.className = "menu-item";
       card.innerHTML = `
         <div class="menu-thumb">
-          <img src="../static/images/${((item.ItemName).replaceAll(' ', '_')).toLowerCase()}.jpg" alt="${item.ItemName}">
+          <img src="../static/images/${((item.ItemName).replaceAll(' ', '_')).toLowerCase()}.webp" alt="${item.ItemName}" loading="lazy">
         </div>
         <div class="menu-info">
           <h3>${item.ItemName}</h3>

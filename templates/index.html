@@ -8,7 +8,7 @@
     <meta name="description" content="order food and drinks from Cafe Finigan in advance. Browse the menu and pick up your order at your chosen time.">
     <meta name="keywords" content="cafe, food, school lunch, pre-order, Finigan">
     <meta name="author" content="Tennant Robbie">
-    <link rel="icon" href="../static/images/logo.png" type="image/png">
+    <link rel="icon" href="../static/images/logo.webp" type="image/webp">
     <link rel="manifest" href="../manifest.json">
 </head>
 
@@ -19,7 +19,7 @@
 
     <!-- ---------- Brand Section (Logo + Name) ---------- -->
     <div class="brand">
-      <img src="../static/images/logo.png" alt="Café Finigan logo" class="logo">
+      <img src="../static/images/logo.webp" alt="Café Finigan logo" class="logo">
       <span class="brand-name">Café Finigan</span>
     </div>
 
@@ -38,7 +38,7 @@
 
 <!-- ---------- Hero Section ---------- -->
 <section class="hero">
-  <img src="../static/images/hero.jpg" alt="Cafe table with coffee and plants">
+  <img src="../static/images/hero.webp" alt="Cafe table with coffee and plants" fetchpriority="high">
   <div class="hero-overlay container">
     <h1>Ready when you are!</h1>
     <p class="lead">Order ahead and skip the queue.</p>
@@ -75,10 +75,10 @@
 
 <section class="container" style="text-align: center; margin-top: 1.5rem;">
   <h2>Tell us what you think</h2>
-  <p class="note">This form sends your message to the Flask server.</p>
+  <p id=feedback-label class="note">Insert feedback below.</p>
 
   <form id="feedback-form" style="max-width: 400px; margin: 0 auto;">
-    <textarea id="feedback-message" name="feedback" rows="3" required></textarea><br>
+    <textarea id="feedback-message" name="feedback" rows="3" aria-labelledby="feedback-label" required></textarea><br>
     <button type="submit" class="add-btn">Send feedback</button>
   </form>
 

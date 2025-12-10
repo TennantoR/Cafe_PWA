@@ -27,8 +27,8 @@ if (!cart || cart.length === 0) {
   form.style.display = "none";   // hide form if nothing to order
   totalSpan.textContent = "0.00";
 } else {
+  document.getElementById("order-button-id").setAttribute("style","visibility:visible");
   let total = 0;
-
   cart.forEach(item => {
     const subtotal = item.Price * item.qty;
     total += subtotal;

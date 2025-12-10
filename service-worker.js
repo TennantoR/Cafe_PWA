@@ -1,5 +1,5 @@
 // A name for this version of the cache
-const CACHE_NAME = "cafe-finigan-v1";
+const CACHE_NAME = "cafe-finigan-v2";
 
 const STATIC_ASSETS = [
   "/templates/index.html",
@@ -10,21 +10,21 @@ const STATIC_ASSETS = [
   "/static/menu.js",
   "/static/orders.js",
   "/static/thanks.js",
-  "/static/images/icons/logo-192.png",
-  "/static/images/icons/logo-512.png",
-  "/static/images/logo.png",
-  "/static/images/hero.jpg",
-  "/static/images/menu-banner.jpg",
-  "/static/images/poached_eggs_on_toast.jpg",
-  "/static/images/beef_burger.jpg",
-  "/static/images/ham_and_cheese_croissant.jpg",
-  "/static/images/potato_wedges.jpg",
-  "/static/images/banana_bread.jpg",
-  "/static/images/chocolate_muffin.jpg",
-  "/static/images/flat_white.jpg",
-  "/static/images/iced_latte.jpg",
-  "/static/images/orange_juice.jpg",
-  "/static/images/mocha.jpg",
+  "/static/images/icons/logo-192.webp",
+  "/static/images/icons/logo-512.webp",
+  "/static/images/logo.webp",
+  "/static/images/hero.webp",
+  "/static/images/menu-banner.webp",
+  "/static/images/poached_eggs_on_toast.webp",
+  "/static/images/beef_burger.webp",
+  "/static/images/ham_and_cheese_croissant.webp",
+  "/static/images/potato_wedges.webp",
+  "/static/images/banana_bread.webp",
+  "/static/images/chocolate_muffin.webp",
+  "/static/images/flat_white.webp",
+  "/static/images/iced_latte.webp",
+  "/static/images/orange_juice.webp",
+  "/static/images/mocha.webp",
   "/static/menu-offline.json"
 ];
 
