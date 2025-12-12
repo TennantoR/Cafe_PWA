@@ -14,6 +14,7 @@ def get_db_connection():
     conn.row_factory = sqlite3.Row      # return rows like dicts
     return conn
 
+# Home route, seen during Flask intialisation
 @app.route('/')
 def home():
     return "✅ Flask server is running!"
@@ -99,6 +100,7 @@ def create_order():
     conn.commit()
     conn.close()
 
+    # Order feedback message
     return jsonify({
         "message": f"✅ Order received! Your order number is {order_id}."
     })

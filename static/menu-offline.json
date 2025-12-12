@@ -2,60 +2,70 @@
   "menu": [
     {
       "Category": "Drink",
+      "Desc": "Dairy, Vegetarian - Double-shot expresso with steamed milk, topped with a thin microfoam",
       "ItemName": "Flat White",
       "MenuItemID": 1,
       "Price": 4.5
     },
     {
       "Category": "Drink",
+      "Desc": "Vegetarian - Freshly squeezed orange juice, served cold and tangy",
       "ItemName": "Orange Juice",
       "MenuItemID": 2,
       "Price": 4.8
     },
     {
       "Category": "Drink",
+      "Desc": "Dairy, Vegetarian - A chilled, lighter coffee topped with a thick milk foam",
       "ItemName": "Iced Latte",
       "MenuItemID": 3,
       "Price": 5.0
     },
     {
       "Category": "Drink",
+      "Desc": "Dairy, Vegetarian - Rich, chocolately coffee served hot and ready",
       "ItemName": "Mocha",
       "MenuItemID": 4,
       "Price": 5.5
     },
     {
       "Category": "Breakfast",
+      "Desc": "Nuts, Dairy, Eggs, Vegetarian - Fresh muffin filled with chocolate chips",
       "ItemName": "Chocolate Muffin",
       "MenuItemID": 5,
       "Price": 4.5
     },
     {
       "Category": "Breakfast",
+      "Desc": "Dairy, Eggs, Gluten - Croissant, served warm, layered with melted cheese and locally sourced ham",
       "ItemName": "Ham and Cheese Croissant",
       "MenuItemID": 6,
       "Price": 5.5
     },
     {
       "Category": "Breakfast",
+      "Desc": "Nuts, Dairy, Eggs, Gluten, Vegetarian - Baked banana bread, warmed and buttered",
       "ItemName": "Banana Bread",
       "MenuItemID": 7,
       "Price": 4.2
     },
     {
       "Category": "Lunch",
+      "Desc": "Vegetarian - Crispy potatos fried and seasoned",
       "ItemName": "Potato Wedges",
       "MenuItemID": 8,
       "Price": 4.0
     },
     {
       "Category": "Lunch",
+      "Desc": "Dairy, Eggs, Gluten - Fundamental burger sauced and seasoned",
       "ItemName": "Beef Burger",
       "MenuItemID": 9,
       "Price": 12.5
     },
     {
       "Category": "Lunch",
+      "Desc": "Dairy, Eggs, Vegetarian - Lightly toasted bread topped with runny, poached eggs",
       "ItemName": "Poached Eggs on Toast",
       "MenuItemID": 10,
       "Price": 8.5

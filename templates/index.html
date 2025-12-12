@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/style.css">
-    <title>Café Finigan – Pre-order Lunch Online</title>
-    <meta name="description" content="order food and drinks from Cafe Finigan in advance. Browse the menu and pick up your order at your chosen time.">
-    <meta name="keywords" content="cafe, food, school lunch, pre-order, Finigan">
+    <title>Finnigan Café – Online Food Ordering System</title>
+    <meta name="description" content="Pre-Order food and drinks from Finnigan Café. Use the menu to browse the in-stock items and prices and pick up your order at your chosen time.">
+    <meta name="keywords" content="Food, online, café, Finnigan, order">
     <meta name="author" content="Tennant Robbie">
     <link rel="icon" href="../static/images/logo.webp" type="image/webp">
     <link rel="manifest" href="../manifest.json">
@@ -19,17 +19,15 @@
 
     <!-- ---------- Brand Section (Logo + Name) ---------- -->
     <div class="brand">
-      <img src="../static/images/logo.webp" alt="Café Finigan logo" class="logo">
-      <span class="brand-name">Café Finigan</span>
+      <img src="../static/images/logo.webp" alt="Finnigan Café logo" class="logo">
+      <span class="brand-name">Finnigan Café</span>
     </div>
 
     <!-- ---------- Navigation Menu ---------- -->
     <nav aria-label="Primary">
       <ul class="nav-list">
-        <li><a href="about.html">About</a></li>
         <li><a href="orders.html">Orders</a></li>
         <li><a href="menu.html">Menu</a></li>
-        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
 
@@ -38,7 +36,7 @@
 
 <!-- ---------- Hero Section ---------- -->
 <section class="hero">
-  <img src="../static/images/hero.webp" alt="Cafe table with coffee and plants" fetchpriority="high">
+  <img src="../static/images/hero.webp" alt="Cafe table with coffee and plants" fetchpriority="high"> <!-- Addition from lighthouse to load image first -->
   <div class="hero-overlay container">
     <h1>Ready when you are!</h1>
     <p class="lead">Order ahead and skip the queue.</p>
@@ -73,15 +71,16 @@
   </section>
 </main>
 
+<!-- Use of labelling and ids to target in CSS and accessibility -->
 <section class="container" style="text-align: center; margin-top: 1.5rem;">
   <h2>Tell us what you think</h2>
   <p id=feedback-label class="note">Insert feedback below.</p>
+
 
   <form id="feedback-form" style="max-width: 400px; margin: 0 auto;">
     <textarea id="feedback-message" name="feedback" rows="3" aria-labelledby="feedback-label" required></textarea><br>
     <button type="submit" class="add-btn">Send feedback</button>
   </form>
-
   <p id="feedback-response" class="note" style="margin-top: 0.5rem;"></p>
 </section>
 
@@ -94,6 +93,7 @@
 
 <!-- ---------- Script: Send form data to Flask and display response ---------- -->
 <script>
+  // Set constants for easily accessible HTML element representations
   const form = document.getElementById('feedback-form');
   const textarea = document.getElementById('feedback-message');
   const output = document.getElementById('feedback-response');

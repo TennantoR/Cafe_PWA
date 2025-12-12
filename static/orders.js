@@ -1,11 +1,13 @@
 // ---------- Checkout Page Logic ----------
 const CART_KEY = "cafeFiniganCart";
 
+// Load cart
 function loadCart() {
   const stored = localStorage.getItem(CART_KEY);
   return stored ? JSON.parse(stored) : [];
 }
 
+// Remove all elements from the cart by removing representation
 function clearCart() {
   localStorage.removeItem(CART_KEY);
 }
@@ -15,32 +17,40 @@ function saveCart(cart) {
   localStorage.setItem(CART_KEY, JSON.stringify(cart));
 }
 
+// Remove single item from cart
 function removeFromCart(MenuItemID) {
   const cart = loadCart();
+  // Finds the index of the menu item within the cart
   const index = cart.findIndex(entry => entry.MenuItemID === MenuItemID);
 
+  // Makes sure valid index
   if (index !== -1) {
-    // Decrease qty
+    // Decrease quantity of item in cart
     cart[index].qty -= 1;
 
-    // Remove completely if 0
+    // Remove the item completely if 0
     if (cart[index].qty <= 0) {
       cart.splice(index, 1);
     }
   }
-
+  // Save new cart items
   saveCart(cart);
 }
 
+// Re-callable way to recalculate price total
 function updateTotal() {
   const cart = loadCart();
+  // Uses reduce on cart array to calculate total price
   const newTotal = cart.reduce((sum, item) => sum + item.Price * item.qty, 0);
+  // Inserts new total price into textContext HTML element
   totalSpan.textContent = newTotal.toFixed(2);
 }
 
+// Failsafe function, checks if cart is empty
 function checkIfCartIsEmpty() {
   const cart = loadCart();
 
+  // Reset cart to show "Your cart is empty" after removing all items
   if (cart.length === 0) {
     rowsBody.innerHTML = "<tr><td colspan='5'>Your cart is empty.</td></tr>";
     form.style.display = "none";
@@ -60,18 +70,21 @@ const timeInput  = document.getElementById("pickup-time");
 // Load cart and display it
 const cart = loadCart();
 
+// Stops showing form and says "Your cart is empty" when empty
 if (!cart || cart.length === 0) {
   rowsBody.innerHTML = "<tr><td colspan='5'>Your cart is empty.</td></tr>";
   form.style.display = "none";   // hide form if nothing to order
   totalSpan.textContent = "0.00";
 } else {
+  // Only shows order button when items in cart
   document.getElementById("order-button-id").setAttribute("style","visibility:visible");
   let total = 0;
-
+  // Calculate subtotal price
   cart.forEach(item => {
   const subtotal = item.Price * item.qty;
   updateTotal();
 
+  // Adds HTML table element similar to 'add' within menu with an inbuilt remove button
   const tr = document.createElement("tr");
   tr.innerHTML = `
     <td>${item.ItemName}</td>
@@ -94,11 +107,12 @@ if (!cart || cart.length === 0) {
   // Recalculate updated cart
   const updatedCart = loadCart();
 
-  // If qty is now 0 → fade out & remove row
+  // If qty is 0 - fade out animation and remove row
   if (!updatedCart.some(x => x.MenuItemID === item.MenuItemID)) {
 
   tr.classList.add("fade-out");
 
+  // Pauses for animation then updates cart values live
   setTimeout(() => {
     tr.remove();
     updateTotal();
@@ -108,16 +122,16 @@ if (!cart || cart.length === 0) {
   return;
 }
 
-  // Otherwise update qty + subtotal
+  // Otherwise update qty and subtotal
   const updatedItem = updatedCart.find(x => x.MenuItemID === item.MenuItemID);
 
-  // Update quantity text
+  // Update quantity text in required HTML element at table row 3
   tr.children[2].textContent = updatedItem.qty;
 
-  // Update subtotal
+  // Update subtotal in required HTML element at table row 5
   tr.children[4].textContent = "$" + (updatedItem.qty * updatedItem.Price).toFixed(2);
 
-  // Update total
+  // Update total and failsafe
   updateTotal();
   checkIfCartIsEmpty()
 });
@@ -126,12 +140,13 @@ if (!cart || cart.length === 0) {
 // When the form is submitted, send the order to Flask
 form.addEventListener("submit", event => {
   event.preventDefault();  // stop page reload
-
+  // Colour-changing animation for button feedback
   document.getElementById("order-button-id").setAttribute("style","background:rgba(84, 45, 15, 1)");
     setTimeout(() => {
       document.getElementById("order-button-id").setAttribute("style","background:rgb(141, 68, 17)");
     }, 300);
 
+  // Collects order data to be sent to database
   const orderData = {
     customerName: nameInput.value.trim(),
     customerEmail: emailInput.value.trim(),
@@ -139,6 +154,7 @@ form.addEventListener("submit", event => {
     items: loadCart()
   };
 
+  // Connect to app.py /orders route to relay data
   fetch("http://127.0.0.1:5050/orders", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -156,6 +172,7 @@ form.addEventListener("submit", event => {
       // Redirect to Thank-You page
       window.location.href = "../templates/thanks.html";
     })
+    // Flask connection error message
     .catch(() => {
       messageP.textContent = "Could not place order. Is Flask running?";
     });

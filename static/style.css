@@ -21,6 +21,7 @@ body {
   line-height: 1.6;
 }
 
+/* change background colour for body in order and menu page */
 .order-body {
  background-color:#622708ba;
 }
@@ -206,6 +207,7 @@ ul { margin: 0; padding: 0; }
   padding: 1rem 0;
   margin-top: 1rem;
   height: 100%;
+  box-shadow: 0 50vh 0 50vh #ffffff;
 }
 
 .site-footer a {
@@ -386,11 +388,14 @@ ul { margin: 0; padding: 0; }
   opacity: 0.6;         /* optional: make disabled look faded */
 }
 
+/* Id-based style for hiding order button when cart is empty */
 #order-button-id{
   visibility: hidden;
   background: rgb(141, 68, 17);
   transition: opacity 0.3s ease;
 }
+
+/* ---------- Remove Button Styling ---------- */
 
 .remove-btn {
     border: 1px solid #4c4038;
@@ -516,11 +521,13 @@ ul { margin: 0; padding: 0; }
   font-size: 1.1rem;
 }
 
-/* Item removal animation */
+
+/* ---------- Item removal animation ---------- */
 .fade-out {
   animation: fadeOut 0.4s forwards ease-out;
 }
 
+/* Instructions for animation - Keyframes (initial to final states)  */
 @keyframes fadeOut {
   from { opacity: 1; }
   to { opacity: 0; height: 0; padding: 0; margin: 0; }

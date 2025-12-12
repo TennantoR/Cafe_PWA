@@ -48,7 +48,9 @@ console.log("Containers:", {
   drinks: drinksContainer
 });
 
+// Function for correctly displaying menu items for live changes
 function renderMenuItems(items) {  
+    // Place every menu item in appropriate html section
     items.forEach(item => {
       let target;
 
@@ -62,8 +64,11 @@ function renderMenuItems(items) {
         target = breakfastContainer; // fallback
       }
 
+      // Create a card per item with inbuilt button
       const card = document.createElement("article");
       card.className = "menu-item";
+      // Each menu item corresponds to correctly formatted image, uses lazy loading in implementation
+      // Unique image,price and description
       card.innerHTML = `
         <div class="menu-thumb">
           <img src="../static/images/${((item.ItemName).replaceAll(' ', '_')).toLowerCase()}.webp" alt="${item.ItemName}" loading="lazy">
@@ -73,7 +78,7 @@ function renderMenuItems(items) {
           <p class="desc">${item.Desc}</p>
           <div class="menu-actions">
             <span class="price">$${Number(item.Price).toFixed(2)}</span>
-            <button class="add-btn">Add</button>
+            <button class="add-btn">Add</button> 
           </div>
         </div>
       `;
@@ -88,16 +93,18 @@ function renderMenuItems(items) {
         addButton.setAttribute("style","background:rgb(141, 68, 17)");
       }, 300); // 300 milliseconds = 0.3 seconds
       
+      // Add the item corresponding to the correct HTML element  to cart
       addToCart({
           MenuItemID: item.MenuItemID,
           ItemName: item.ItemName,
           Price: item.Price
       });
 
+      // Console feedback for checking
       console.log(`Added to cart: ${item.ItemName}`);
       });
   
-     
+      // Adds the card HTML element onto the menu item list
       if (target) {
         target.appendChild(card);
       }
@@ -112,14 +119,15 @@ fetch("http://127.0.0.1:5050/menu")
     console.log("Menu data from Flask:", data);
 
     const items = data.menu;  // matches return jsonify({"menu": menu})
-
+    // Call render items with current items value
     renderMenuItems(items);
   })
 
-
+  // Console error message for missed connection to Flask
   .catch(err => {
   console.warn("API failed — loading offline menu instead:", err);
 
+  // Load offline menu when connection fails
   fetch("../static/menu-offline.json")
     .then(res => res.json())
     .then(data => {
@@ -127,6 +135,7 @@ fetch("http://127.0.0.1:5050/menu")
       const items = data.menu || data;
       renderMenuItems(items);
     })
+    // Back-up error for offline menu failing
     .catch(() => {
       breakfastContainer.innerHTML =
         "<p>Unable to load menu items offline.</p>";
