@@ -55,6 +55,7 @@ function checkIfCartIsEmpty() {
     rowsBody.innerHTML = "<tr><td colspan='5'>Your cart is empty.</td></tr>";
     form.style.display = "none";
     totalSpan.textContent = "0.00";
+    document.getElementById("order-button-id").setAttribute("style","visibility:hidden");
   }
 }
 
@@ -75,6 +76,7 @@ if (!cart || cart.length === 0) {
   rowsBody.innerHTML = "<tr><td colspan='5'>Your cart is empty.</td></tr>";
   form.style.display = "none";   // hide form if nothing to order
   totalSpan.textContent = "0.00";
+  document.getElementById("order-button-id").setAttribute("style","visibility:hidden");
 } else {
   // Only shows order button when items in cart
   document.getElementById("order-button-id").setAttribute("style","visibility:visible");
@@ -170,7 +172,7 @@ form.addEventListener("submit", event => {
       clearCart();
 
       // Redirect to Thank-You page
-      window.location.href = "../templates/thanks.html";
+      window.location.href = "/templates/thanks.html";
     })
     // Flask connection error message
     .catch(() => {
